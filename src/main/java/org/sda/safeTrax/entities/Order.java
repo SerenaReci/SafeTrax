@@ -41,7 +41,15 @@ public class Order extends BaseEntity {
     @Column(name = "company_id")
     private Long companyId;
 
+    @Column(name="courier_id")
+    private Long courierId;
+
     @ManyToOne
     @JoinColumn(name = "company_id", insertable = false, updatable = false)
     private Company company;
+
+    @ManyToOne
+    @JoinColumn(name="courier_id",insertable=false,updatable = false)
+    private Courier courier;
+
 }
