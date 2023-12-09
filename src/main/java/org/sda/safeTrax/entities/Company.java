@@ -1,9 +1,8 @@
 package org.sda.safeTrax.entities;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "st_company")
@@ -13,4 +12,7 @@ public class Company extends BaseEntity{
 
     @Column(name = "phone")
     private String phone;
+
+    @OneToMany
+    List<Order> orders;
 }
